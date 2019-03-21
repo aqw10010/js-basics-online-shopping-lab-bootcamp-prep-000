@@ -11,7 +11,7 @@ function setCart(c) {
 }
 
 function addToCart(itemName) {
-  var object = { itemName: "daikon",itemPrice: Math.floor(100*(Math.random())),}
+  var object = { itemName: itemName,itemPrice: Math.floor(100*(Math.random())),}
     cart.push(object)
     return `${itemName} has been added to your cart.`
    return cart
@@ -34,30 +34,37 @@ if (cart.length === 1) {
     return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}, ${cart[1].itemName} at $${cart[1].itemPrice}, and ${cart[2].itemName} at $${cart[2].itemPrice}.`
   }
    for ( i = 0; i < cart.length; i++) ; {
-     
    }
   }
 
 
 function total() {
-  
-  cart[i]
-  return cart 
+ var sum = 0
+ 
+ for (i = 0; i < cart.length; i++) {
+   cart[i]
+   sum += cart[i].itemPrice
+ }
+
+  return sum 
  
 }
 
 function removeFromCart(itemName) {
-  
-  if (cart === itemName) {
-    
+  for ( let i = 0; i < cart.length; i++) {
+  if (itemName === cart[i].itemName) {
+   cart.splice(i, 1) 
   }
-  cart.splice(0)
-  
-  return cart 
-}
+  }
+  return cart
 
-if (cart !== ItemName) {
- return "That item is not in your cart." 
+    
+  if (itemName != cart.itemName) {
+     cart.splice(i, 1) 
+  }
+    
+  console.log('That item is not in your cart.')
+  return cart
  }
 
 function placeOrder(cardNumber) {
@@ -67,6 +74,6 @@ function placeOrder(cardNumber) {
       cart.pop();
     } 
     } else 
-      console.log("Sorry, we don't have a credit card on file for you.")
+      console.log("Sorry, we don/'t have a credit card on file for you.")
 return cart;
   }
